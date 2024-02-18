@@ -50,7 +50,7 @@ const UploadModel = ({ address, className, contract }) => {
 
     return (
         <div className={`${className} p-10`}>
-            <h1 className="p-5">Entrena Tu IA</h1>
+            <h1 className="p-5 text-gray-900">Entrena Tu IA</h1>
             <DropFile className="my-2" setFileURL={setFileURL1} id="1">Subir archivo docker</DropFile>
             <br />
             <DropFile className="my-2" setFileURL={setFileURL2} id="2">Subir archivo python</DropFile>

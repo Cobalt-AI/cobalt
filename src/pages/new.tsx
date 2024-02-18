@@ -1,10 +1,8 @@
-import { Card } from 'components/Card/Card';
-import { MarketDataCard } from 'components/MarketDataCard';
-import { Sidebar } from 'components/Sidebar';
-import { FC, ReactNode, useState } from 'react';
-import { Modal } from 'components/Modal';
+
+import { FC, ReactNode, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router'; // Importa useRouter
+import { useWallet } from '@solana/wallet-adapter-react';
 
 
 
@@ -16,6 +14,15 @@ const New: FC<NewProps> = ({ children }) => {
     const [data, setData] = useState(null);
     const router = useRouter(); // Usa el hook useRouter
 
+    const [publicKey, setPublicKey] = useState(null);
+    const { publicKey: walletPublicKey, connect, disconnect } = useWallet();
+    useEffect(() => {
+        if (walletPublicKey) {
+            setPublicKey(walletPublicKey.toBase58());
+        } else {
+            setPublicKey(null);
+        }
+    }, [walletPublicKey]);
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -35,7 +42,7 @@ const New: FC<NewProps> = ({ children }) => {
             data_size: $cantidad.value,
             estimated_cost: 10, //$valor.value,
             request_type: $tipo.value,
-            owner: "VEM5ghF1Zw9t6CUcmdCKAhbbhj5HvFmhza5NwfWVFVC",
+            owner: publicKey,
             owner_private_key: "43sEYU1J5cNto2bCDRFye8zKJim8Eoyn1NXwvQtoXtM5WgvEPtdNLmRrqbUYDpkz8h6ouAqNJ3HfP5aEAkXq6bH1"
         };
 
