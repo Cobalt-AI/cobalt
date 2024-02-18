@@ -31,8 +31,8 @@ const Projects: FC<ProjectsProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <section className={styles.slider}>
+    <div className={`${styles.container} `}>
+      <section className={`${styles.slider} flex items-center mx-auto`}>
         {data.map((project) => (
           <Card project={project} key={project.id}/>
         ))}
