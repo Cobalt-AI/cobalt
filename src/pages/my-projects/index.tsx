@@ -30,6 +30,10 @@ const MyProjects = ({ children }) => {
 
     }, []);
 
+    useEffect(() => {
+        setUserProjects(data.filter(proj => proj.owner === "VEM5ghF1Zw9t6CUcmdCKAhbbhj5HvFmhza5NwfWVFVC"));
+    }, [data]);
+
     return (
         <>
             <h1 className='text-3xl'>Proyectos</h1>

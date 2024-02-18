@@ -17,10 +17,6 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     <>
       <ContextProvider>
         <Sidebar>
-          <Head>
-            <title>Solana Scaffold Lite</title>
-          </Head>
-
           <div className="flex flex-col h-screen">
             <Notifications />
 
