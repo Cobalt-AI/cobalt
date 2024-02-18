@@ -9,7 +9,7 @@ Responsive                     |  Desktop
 
 ## Comienza
 
-Puedes ver el producto directamente desde la (pag web)[https://cobalt-blond.vercel.app/]
+Puedes ver el producto directamente desde la [página web](https://cobalt-blond.vercel.app/)
 
 ## Installation
 
