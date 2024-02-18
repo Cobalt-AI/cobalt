@@ -4,7 +4,7 @@ import { Sidebar } from 'components/Sidebar';
 import { FC, ReactNode, useState } from 'react';
 import { Modal } from 'components/Modal';
 import axios from 'axios';
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/router'; // Importa useRouter
 
 
 
@@ -14,6 +14,8 @@ interface NewProps {
 
 const New: FC<NewProps> = ({ children }) => {
     const [data, setData] = useState(null);
+    const router = useRouter(); // Usa el hook useRouter
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -38,14 +40,14 @@ const New: FC<NewProps> = ({ children }) => {
         };
 
         console.log(project);
-        
+
 
         try {
             const response = await axios.post('https://back-production-8ab5.up.railway.app/api/v1/requests/', project);
             setData(response.data);
 
-            redirect("/")
             alert("Proyecto creado exitosamente")
+            router.push("/"); // Usa router.push para redireccionar
         } catch (error) {
             console.error('Error fetching data:', error);
         }
