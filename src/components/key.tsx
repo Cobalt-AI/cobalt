@@ -17,6 +17,7 @@ function Key() {
   return (
     <div>
       {publicKey && <p>Public Key: {publicKey}</p>}
+      <p></p>
     </div>
   );
 }

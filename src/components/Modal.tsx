@@ -34,6 +34,8 @@ export const Modal = ({ toogle, proj }) => {
             setData(response.data);
 
             alert("Archivos subidos exitosamente")
+
+
         } catch (error) {
             console.error('Error fetching data:', error);
 
