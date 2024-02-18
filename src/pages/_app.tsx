@@ -9,8 +9,24 @@ import { Sidebar } from 'components/Sidebar';
 import Notifications from '../components/Notification';
 require('@solana/wallet-adapter-react-ui/styles.css');
 require('../styles/globals.css');
+import { WalletAdapter } from '@solana/wallet-adapter-base';
+import { useWallet } from '@solana/wallet-adapter-react';
+import Key from 'components/key';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
+  const [publicKey, setPublicKey] = useState(null);
+  const { publicKey: walletPublicKey, connect, disconnect } = useWallet();
+
+  useEffect(() => {
+    if (walletPublicKey) {
+      setPublicKey(walletPublicKey.toBase58());
+    } else {
+      setPublicKey(null);
+    }
+  }, [walletPublicKey]);
+
+  console.log(publicKey);
+
 
   return (
     <>
@@ -20,7 +36,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
             <Notifications />
 
             <ContentContainer>
-              <Component {...pageProps} />
+              <Component publicKey={publicKey} {...pageProps} />
             </ContentContainer>
             {/* <Footer /> */}
           </div>
