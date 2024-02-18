@@ -38,7 +38,7 @@ export const MyModelCard = ({ address, contract }) => {
                             <img className="max-w-2xl my-3" src={img} alt="imagen de demostracion" />
                             <div className="flex flex-row space-x-6">
                                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={() => handleLike(1)}>¡Me gustó! 👍 | Descargar modelo</button>
-                                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={() => handleLike(0)}>¡No me gustó! 😡 | Recivir devolución</button>
+                                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={() => handleLike(0)}>¡No me gustó! 😡 | Recibir devolución</button>
                             </div>
                         </> : <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={viewDemostration}>Ver demostracion</button>}
                     </div>
