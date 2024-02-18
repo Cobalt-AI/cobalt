@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { DropFile } from "../components/dropFile"
 import Web3 from 'web3';
+import { DropFile } from "../components/Dropfile";
 const web3 = new Web3();
 
 

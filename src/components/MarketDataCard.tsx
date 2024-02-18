@@ -87,9 +87,9 @@ export const MarketDataCard = ({ className, contract, address }:any) => {
                     <button onClick={viewInfo}>Ver información</button>
                     {info && <>
                         <p>{info[0]}</p>
-                        <a target="_blank" href={info[1]}>Descargar imagen docker</a>
+                        <a target="_blank" rel="noreferrer" href={info[1]}>Descargar imagen docker</a>
                         <br />
-                        <a target="_blank" href={info[2]}>Descargar código</a>
+                        <a target="_blank" rel="noreferrer" href={info[2]}>Descargar código</a>
                         <br />
                     </>}
                     <button onClick={startTraining}>Entrenar</button>

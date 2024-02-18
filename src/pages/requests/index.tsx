@@ -29,7 +29,6 @@ const Projects: FC<ProjectsProps> = ({ children }) => {
 
     fetchData(); // Llamar a la función fetchData cuando el componente se monte
   }, []);
-  console.log(data);
 
   return (
     <div className={styles.container}>
