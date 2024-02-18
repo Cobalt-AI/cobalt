@@ -50,6 +50,5 @@ export const Card = ({ className, project, owner }: any) => {
             </div>
             {!owner && <Modal toogle={toggleModalVisibility} proj={project}/>}
         </div>
-
     )
 }
