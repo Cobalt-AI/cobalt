@@ -15,22 +15,22 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <>
-      <Sidebar>
-        <Head>
-          <title>Solana Scaffold Lite</title>
-        </Head>
+      <ContextProvider>
+        <Sidebar>
+          <Head>
+            <title>Solana Scaffold Lite</title>
+          </Head>
 
-        <ContextProvider>
           <div className="flex flex-col h-screen">
             <Notifications />
-            <AppBar />
+
             <ContentContainer>
               <Component {...pageProps} />
             </ContentContainer>
             {/* <Footer /> */}
           </div>
-        </ContextProvider>
-      </Sidebar >
+        </Sidebar >
+      </ContextProvider>
     </>
   );
 }
