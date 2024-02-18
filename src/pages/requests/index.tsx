@@ -35,7 +35,7 @@ const Projects: FC<ProjectsProps> = ({ children }) => {
     <div className={styles.container}>
       <section className={styles.slider}>
         {data.map((project) => (
-          <Card project={project} className="mt-6" />
+          <Card project={project}/>
         ))}
       </section>
     </div>

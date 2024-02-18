@@ -9,12 +9,12 @@ interface Props {
 export const ContentContainer: React.FC<Props> = ({ children }) => {
 
   return (
-    <div className="flex-1 flex  flex-col justify-between items-center bg-[#F1F1F1] pt-16">
-      <div className='max-w-lg w-full'>
-        <div className="items-center drawer-content flex flex-col justify-between w-full">
+    <div className="flex-1 flex  flex-col justify-between items-center bg-[#F1F1F1]">
+      {/* <div className='max-w-lg w-full'> */}
+        {/* <div className="items-center drawer-content flex flex-col justify-between w-full"> */}
           {children}
-        </div>
-      </div>
+        {/* </div> */}
+      {/* </div> */}
     </div>
   );
 };
