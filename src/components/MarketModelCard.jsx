@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { DropFile } from "./dropFile"
+import { DropFile } from "./Dropfile";
 
 export const MarketModelCard = ({ className, contract, address }) => {
 
