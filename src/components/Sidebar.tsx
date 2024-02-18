@@ -26,9 +26,9 @@ export const Sidebar: FC<SidebarProps> = ({ children }) => {
             </svg>
         </button>
 
-        <aside id="separator-sidebar" className="fixed flex  top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+        <aside id="separator-sidebar" className="fixed flex  top-0 left-0 z-40 bg-gray-800 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
 
-            <div className="h-full px-3 py-4 overflow-y-hidden bg-gray-50 dark:bg-gray-800 flex flex-col justify-between">
+            <div className="h-full px-3 py-4 overflow-y-hidden   flex flex-col justify-between">
                 <div>
 
                     <ul className="space-y-2 font-medium">

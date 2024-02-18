@@ -17,16 +17,9 @@ export const AppBar: React.FC = () => {
     <div>
       {/* NavBar / Header */}
       <div className="navbar flex h-20 flex-row md:mb-2 text-neutral-content  bg-opacity-66">
-        <div className="navbar-start align-items-center">
+        <div className="align-items-center">
 
           <WalletMultiButtonDynamic className="btn-ghost btn-sm relative flex md:hidden text-lg " />
-        </div>
-
-        {/* Nav Links */}
-        {/* Wallet & Settings */}
-        <div className="navbar-end">
-
-          <WalletMultiButtonDynamic className="btn-ghost btn-sm rounded-btn text-lg mr-6 " />
         </div>
 
         
