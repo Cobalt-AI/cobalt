@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode, useState, useEffect, useRef } from 'react';
 import NetworkSwitcher from './NetworkSwitcher';
 import dynamic from 'next/dynamic';
 import { useAutoConnect } from 'contexts/AutoConnectProvider';
@@ -18,11 +18,34 @@ const WalletMultiButtonDynamic = dynamic(
 export const Sidebar: FC<SidebarProps> = ({ children }) => {
     const { autoConnect, setAutoConnect } = useAutoConnect();
     const [isOpened, setIsOpened] = useState<boolean>(false);
+    const sidebarRef = useRef<HTMLDivElement>(null); // Ref para el sidebar
+
 
     const toogleOpen = () => {
         setIsOpened(!isOpened);
     };
     
+    // Cierra el sidebar si se hace clic fuera de él
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+                setIsOpened(false);
+                console.log("aaa");
+                
+            }
+        };
+
+        // Agrega el event listener cuando el sidebar está abierto
+        if (isOpened) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        // Limpieza del event listener
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpened]); 
+
     return (<>
         <button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" onClick={toogleOpen} aria-controls="separator-sidebar" type="button" className="inline-flex items-center p-2 mt-2 ms-3 text-sm  rounded-lg sm:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
             <span className="sr-only">Open sidebar</span>
@@ -31,7 +54,7 @@ export const Sidebar: FC<SidebarProps> = ({ children }) => {
             </svg>
         </button>
 
-        <aside id="separator-sidebar" className={`fixed flex overflow-hidden top-0 left-0 z-40 bg-gray-800 w-64 h-screen ${!isOpened && "-translate-x-full"}  transition-transform sm:translate-x-0`} aria-label="Sidebar">
+        <aside id="separator-sidebar" ref={sidebarRef} className={`fixed flex overflow-hidden top-0 left-0 z-40 bg-gray-800 w-64 h-screen ${!isOpened && "-translate-x-full"}  transition-transform sm:translate-x-0`} aria-label="Sidebar">
 
             <div className="h-full px-3 py-4 overflow-hidden   flex flex-col justify-between">
                 <div>
@@ -101,7 +124,7 @@ export const Sidebar: FC<SidebarProps> = ({ children }) => {
             </div>
         </aside>
 
-        <div className="sm:ml-64">
+        <div className="sm:ml-64" onClick={() => setIsOpened(false)}>
             {children}
         </div>
     </>
