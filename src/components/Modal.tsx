@@ -23,7 +23,6 @@ export const Modal = ({ toogle, proj }) => {
         // Actualizar el estado con los archivos seleccionados
         setSelectedFiles(selectedFilesArray);
 
-        console.log("cambiado");
     };
     const [data, setData] = useState(null);
 
@@ -33,8 +32,14 @@ export const Modal = ({ toogle, proj }) => {
         try {
             const response = await axios.post('https://back-production-8ab5.up.railway.app/api/v1/requests/uploads/', formData);
             setData(response.data);
+
+            alert("Archivos subidos exitosamente")
+
+
         } catch (error) {
             console.error('Error fetching data:', error);
+
+            alert("Lo siento, intentalo de nuevo")
         }
     };
 

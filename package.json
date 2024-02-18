@@ -30,6 +30,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "supabase": "^1.142.2",
+    "web3": "^4.5.0",
     "zustand": "^3.6.9"
   },
   "devDependencies": {

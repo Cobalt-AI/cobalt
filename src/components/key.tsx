@@ -16,10 +16,8 @@ function Key() {
 
   return (
     <div>
-      <h1>My Solana App</h1>
-      <button onClick={() => connect()}>Connect to Wallet</button>
-      <button onClick={() => disconnect()}>Disconnect Wallet</button>
       {publicKey && <p>Public Key: {publicKey}</p>}
+      <p></p>
     </div>
   );
 }

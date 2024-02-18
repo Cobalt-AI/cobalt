@@ -4,6 +4,7 @@ import { Sidebar } from 'components/Sidebar';
 import { FC, ReactNode, useState } from 'react';
 import { Modal } from 'components/Modal';
 import axios from 'axios';
+import { redirect } from 'next/navigation'
 
 
 
@@ -30,9 +31,10 @@ const New: FC<NewProps> = ({ children }) => {
             description: $descripcion.value,
             image_url: 'https://www.nationalgeographic.com.es/medio/2023/12/14/parkinson_4e0a426b_231214105821_1280x853.jpg',
             data_size: $cantidad.value,
-            estimated_cost: $valor.value,
+            estimated_cost: 10, //$valor.value,
             request_type: $tipo.value,
-            owner: "VEM5ghF1Zw9t6CUcmdCKAhbbhj5HvFmhza5NwfWVFVC"
+            owner: "VEM5ghF1Zw9t6CUcmdCKAhbbhj5HvFmhza5NwfWVFVC",
+            owner_private_key: "43sEYU1J5cNto2bCDRFye8zKJim8Eoyn1NXwvQtoXtM5WgvEPtdNLmRrqbUYDpkz8h6ouAqNJ3HfP5aEAkXq6bH1"
         };
 
         console.log(project);
@@ -41,6 +43,9 @@ const New: FC<NewProps> = ({ children }) => {
         try {
             const response = await axios.post('https://back-production-8ab5.up.railway.app/api/v1/requests/', project);
             setData(response.data);
+
+            redirect("/")
+            alert("Proyecto creado exitosamente")
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -75,10 +80,10 @@ const New: FC<NewProps> = ({ children }) => {
                     <label htmlFor="cantidad" className="block my-2 text-sm font-medium text-gray-900 dark:text-white">Cantidad de datos</label>
                     <input type="" id="cantidad" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                 </div>
-                <div className="mb-6">
+                {/* <div className="mb-6">
                     <label htmlFor="valor" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Valor a transferir (SOL)</label>
                     <input type="" id="valor" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                </div>
+                </div> */}
                 <label htmlFor="tipo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de datos</label>
                 <select id="tipo" className="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option selected>Selecciona una opción</option>
