@@ -1,9 +1,13 @@
 import { useState } from "react";
 import axios from 'axios';
 
+// Components
+import { Loader } from "components/Loader";
+
 export const Modal = ({ toogle, proj }) => {
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [formData, setFormData] = useState<FormData>();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
 
     const handleFileChange = (event) => {
@@ -28,17 +32,14 @@ export const Modal = ({ toogle, proj }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        setIsLoading(true);
         try {
             const response = await axios.post('https://back-production-8ab5.up.railway.app/api/v1/requests/uploads/', formData);
             setData(response.data);
-
-            alert("Archivos subidos exitosamente")
-
-
+            setIsLoading(false);
         } catch (error) {
             console.error('Error fetching data:', error);
-
+            setIsLoading(false);
             alert("Lo siento, intentalo de nuevo")
         }
     };
@@ -46,6 +47,8 @@ export const Modal = ({ toogle, proj }) => {
 
     return (
         <>
+            {isLoading && <Loader />}
+
             <div id="default-modal" aria-hidden="true" className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div className="relative p-4 w-full max-w-2xl max-h-full">
                     <div className="relative bg-white rounded-lg shadow-2xl dark:bg-gray-700">

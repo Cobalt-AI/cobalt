@@ -8,6 +8,7 @@ import { useRouter } from "next/router"; // Importa useRouter
 // Components
 import { Select } from "components/Select";
 import { Input } from "components/Input";
+import { Loader } from "components/Loader";
 
 interface NewProps {
   children: ReactNode;
@@ -73,12 +74,7 @@ const NewRequestData: FC<NewProps> = ({ children }) => {
 
   return (
     <div className={styles.container}>
-      {isLoading && (
-        <div className="loader__content">
-          <span className="loader"></span>
-          Cargando...
-        </div>
-      )}
+      {isLoading && <Loader />}
 
       <h3>Crear solicitud de datos</h3>
 
