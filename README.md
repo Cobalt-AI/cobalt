@@ -1,69 +1,21 @@
 
 # Frontend para el proyecto Cobalt.ai
 
-Cobalt es una plataforma colaborativa de entrenamiento de IA, proporcionando servicios como datos de entrenamiento (videos, imagenes, texto, y demás para entrenar un modelo) o procesamiento de computo (dar tu GPU, CPU o RAM).
+Cobalt es una innovadora plataforma colaborativa de entrenamiento de IA que permite a usuarios y desarrolladores proporcionar y acceder a datos de entrenamiento (como vídeos, imágenes, texto, etc.) y recursos de computación (GPU, CPU, RAM) de manera eficiente y descentralizada.
+
 
 Responsive                     |  Desktop
 :-------------------------:|:-------------------------:
 ![](scaffold-mobile.png)  |  ![](scaffold-desktop.png)
 
-## Comienza
+## 🌐 Acceso Rápido
 
-Puedes ver el producto directamente desde la [página web](https://cobalt-blond.vercel.app/)
+Este proyecto se desarrolló utilizando Next.js y la blockchain de Solana, ofreciendo una experiencia de usuario fluida y segura.
+Visita [Cobalt.ai](https://cobalt-blond.vercel.app/) para explorar la plataforma.
 
-## Installation
+### 📦 Estructura del Proyecto
 
-```bash
-npm install
-# or
-yarn install
-```
-
-## Build and Run
-
-Next, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Features
-
-Each Scaffold will contain at least the following features:
-
-```
-Wallet Integration with Auto Connec / Refresh
-
-State Management
-
-Components: One or more components demonstrating state management
-
-Web3 Js: Examples of one or more uses of web3 js including a transaction with a connection provider
-
-Sample navigation and page changing to demonstate state
-
-Clean Simple Styling 
-
-Notifications (optional): Example of using a notification system
-
-```
-
-A Solana Components Repo will be released in the near future to house a common components library.
-
-
-### Structure
-
-The scaffold project structure may vary based on the front end framework being utilized. The below is an example structure for the Next js Scaffold.
+El proyecto sigue una estructura modular para facilitar el mantenimiento y la escalabilidad.
  
 ```
 ├── public : publically hosted files
@@ -81,41 +33,14 @@ style, package, configuration, and other project files
 
 ```
 
-## Contributing
+### 🤝 Contribuyendo
+Las contribuciones son lo que hacen que la comunidad de código abierto sea un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas será muy apreciada.
 
-Anyone is welcome to create an issue to build, discuss or request a new feature or update to the existing code base. Please keep in mind the following when submitting an issue. We consider merging high value features that may be utilized by the majority of scaffold users. If this is not a common feature or fix, consider adding it to the component library or cookbook. Please refer to the project's architecture and style when contributing. 
-
-If submitting a feature, please reference the project structure shown above and try to follow the overall architecture and style presented in the existing scaffold.
-
-### Committing
-
-To choose a task or make your own, do the following:
-
-1. [Add an issue](https://github.com/solana-dev-adv/solana-dapp-next/issues/new) for the task and assign it to yourself or comment on the issue
-2. Make a draft PR referencing the issue.
-
-The general flow for making a contribution:
-
-1. Fork the repo on GitHub
-2. Clone the project to your own machine
-3. Commit changes to your own branch
-4. Push your work back up to your fork
-5. Submit a Pull request so that we can review your changes
-
-**NOTE**: Be sure to merge the latest from "upstream" before making a 
-pull request!
-
-You can find tasks on the [project board](https://github.com/solana-dev-adv/solana-dapp-next/projects/1) 
-or create an issue and assign it to yourself.
-
-
-## Learn More Next Js
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
+1. Haz Fork del proyecto
+2. Crea tu rama de características (git checkout -b feature/AmazingFeature)
+3. Realiza tus cambios y haz commit (git commit -m 'Add some AmazingFeature')
+4. Haz Push a la rama (git push origin feature/AmazingFeature)
+5. Abre un Pull Request
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
