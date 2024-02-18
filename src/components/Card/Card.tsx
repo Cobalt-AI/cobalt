@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Modal } from "./Modal";
-import { Slider } from "./Slider"
+import { Modal } from "../Modal";
+import { Slider } from "../Slider"
+import styles from './styles.module.css';
 
 export const Card = ({ className, project, owner }: any) => {
 
@@ -19,7 +20,7 @@ export const Card = ({ className, project, owner }: any) => {
     }
 
     return (
-        <div className={`max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ${className}`}>
+        <div className={styles.container}>
             <a href="#">
                 <img className="rounded-t-lg" src={project.image_url || "https://flowbite.com/docs/images/blog/image-1.jpg"} alt="" />
             </a>
