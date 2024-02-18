@@ -20,7 +20,7 @@ export const Card = ({ className, project, owner }: any) => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container + "w-48"}>
             <a href="#">
                 <img className="rounded-t-lg" src={project.image_url || "https://flowbite.com/docs/images/blog/image-1.jpg"} alt="" />
             </a>

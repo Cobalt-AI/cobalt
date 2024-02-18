@@ -37,7 +37,7 @@ const MyProjects = ({ children }) => {
     return (
         <>
             <h1 className='text-3xl'>Proyectos</h1>
-            {userProjects.map((project) => <Card owner project={project} className="mt-6" />)}
+            {userProjects.map((project) => <Card key={project.id} owner project={project} className="mt-6" />)}
             <Key/>
         </>
     )

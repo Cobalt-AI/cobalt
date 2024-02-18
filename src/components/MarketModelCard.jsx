@@ -86,9 +86,9 @@ export const MarketModelCard = ({ className, contract, address }) => {
                             <button onClick={viewInfo}>Ver información</button>
                             {info && <>
                                 <p>{info[0]}</p>
-                                <a target="_blank" href={info[1]}>Descargar imagen docker</a>
+                                <a  rel="noreferrer" href={info[1]}>Descargar imagen docker</a>
                                 <br />
-                                <a target="_blank" href={info[2]}>Descargar código</a>
+                                <a  rel="noreferrer" href={info[2]}>Descargar código</a>
                                 <br />
                             </>}
                             <button onClick={startTraining} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Entrenar</button>

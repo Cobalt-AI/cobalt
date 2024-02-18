@@ -29,13 +29,17 @@ const Projects: FC<ProjectsProps> = ({ children }) => {
 
     fetchData(); // Llamar a la función fetchData cuando el componente se monte
   }, []);
-  console.log(data);
 
   return (
     <div className={styles.container}>
       <section className={styles.slider}>
         {data.map((project) => (
-          <Card project={project} className="mt-6" />
+          <Card key={project.id} project={project} className="mt-6" />
+        ))}
+      </section>
+      <section className={styles.slider}>
+        {data.map((project) => (
+          <p key={project.id} className="text-black w-64">a</p>
         ))}
       </section>
     </div>
